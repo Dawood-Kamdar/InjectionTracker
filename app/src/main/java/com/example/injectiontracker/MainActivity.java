@@ -1,6 +1,7 @@
 package com.example.injectiontracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
 
 import android.content.Context;
@@ -17,17 +18,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Context context = this.getApplicationContext();
-        AppDatabase db = Room.inMemoryDatabaseBuilder(context, AppDatabase.class)
-                .allowMainThreadQueries().build();
+//        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+//        setSupportActionBar(myToolbar);
+//        Context context = this.getApplicationContext();
+//        AppDatabase db = Room.inMemoryDatabaseBuilder(context, AppDatabase.class)
+//                .allowMainThreadQueries().build();
 
 //        BodyPart bodyPart = new BodyPart();
 //        bodyPart.bodyPartId = 5;
 //        bodyPart.name = "test";
-//
+
 //        db.bodyPartDao().insertAll(bodyPart);
-        BodyPart toDisplay = db.bodyPartDao().getAll().get(0);
-        ((TextView)findViewById(R.id.textView)).setText(toDisplay.name);
-        db.close();
+//        BodyPart toDisplay = db.bodyPartDao().getAll().get(0);
+//        ((TextView)findViewById(R.id.textView)).setText(toDisplay.name);
+//        db.close();
+
     }
 }
