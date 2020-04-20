@@ -5,7 +5,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.room.Room;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.injectiontracker.Database.AppDatabase;
@@ -33,5 +36,18 @@ public class MainActivity extends AppCompatActivity {
 //        ((TextView)findViewById(R.id.textView)).setText(toDisplay.name);
 //        db.close();
 
+    }
+
+    public void seeSiteMap(View view) {
+        Intent intent = new Intent(this, SiteMap.class);
+        this.startActivity(intent);
+    }
+
+    public void inject(View view) {
+        Intent intent = new Intent(this, InjectionConfirmation.class);
+        TextView textView = this.findViewById(R.id.siteNumber);
+        int siteNumber = Integer.parseInt(textView.getText().toString());
+        intent.putExtra("siteNumber", siteNumber);
+        this.startActivity(intent);
     }
 }
